@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=&lt;device-width&gt;, initial-scale=1.0">
+    <title>Project Manager</title>
+    <link rel="stylesheet" type="text/css" href="/static/index.css">
+</head>
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="#Contact">Contact</a>
+        <a href="/about">About</a>
+      </div> 
+    <div style="margin: 30px;"> 
+        <h1> {{project.title}}</h1>
+        <ol>
+            {% for task in tasks %}
+                
+                  <li><h4>{{task.task_name}}</h4></li>
+                  <p style="margin-left: 15px;">{{task.description}}</p>
+                  <div class="button-container" style="margin: 10px 10px 20px 10px;">
+                  <form action="/update/task/{{task_id}}" method="POST">
+                    <input type="submit" value="Edit Task">
+                  </form>
+                  <form action="/delete/task/{{task.task_id}}" method="POST">
+                     <input type="submit" value="Delete Task">
+                  </form>
+                  <form> <button type="button" style="color: red;"> Priority {{task.priority}}</button> </form>
+                 </div>
+            {% endfor %}
+        </ol>
+
+        <div class="add_task">
+            <h3> Add Task</h3>
+            <form action="/project/add/task/{{project.project_id}}" method="POST">
+                <div>
+                    Task Name: <input type="text" name="task_name" required="">
+                    <label> Priority</label>
+                    <select name="priority">
+                        <option value="high">High</option>
+                        <option value="normal">Normal</option>
+                        <option value="low">Low</option>
+                    </select>
+                    <br>
+                    <textarea name="task-description" rows="5" cols="30" style="margin-top: 12px;" placeholder="task-description"></textarea> 
+                </div>  
+                <br>
+                <input type="submit" value="Add Task">
+            
+            </form>
+        </div>
+        {% for category, message  in get_flashed_messages(with_categories=true)%}
+            <div style="color:{{category}}"> {{message}}</div>
+        {%endfor%}
+     
+    </div>
+
+</body></html>

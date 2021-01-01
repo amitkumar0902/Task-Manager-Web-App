@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Manager</title>
+    <link rel="stylesheet" type="text/css" href="/static/index.css">
+</head>
+<body>
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="#Contact">Contact</a>
+        <a href="/about">About</a>
+      </div> 
+    <div class="project_class" style="margin: 30px;">
+        <h1> Your Projects</h1>
+        <ol>
+            {% for project in projects %}
+                <div class="button-container">
+                    <li><h3>{{project.title}}</h3></li>
+                    <form><button type="button"> <a href="/project/{{project.project_id}}" style="text-decoration: none;">View Project</a></button></form>
+                    <form action="/delete/project/{{project.project_id}}" method="POST">
+                        <input type="submit" value="Delete Project">
+                    </form>
+                </div>
+            {% endfor %}
+
+        </ol>
+        
+        <br>
+        <h3> Add New Projects</h3>
+        <form action="/add/project" ,="" method="POST">
+            <div>
+                Project Name: <input type="text" name="project-title">
+                <br>
+                <input type="submit" value="Add Project">
+            </div>
+        </form>
+        {% for category, message  in get_flashed_messages(with_categories=true)%}
+            <div style="color:{{category}}"> {{message}}</div>
+        {%endfor%}
+    </div>
+
+</body></html>

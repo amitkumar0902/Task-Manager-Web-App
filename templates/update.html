@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Manager</title>
+  <link rel="stylesheet" href="./update_files/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="./update_files/index.css">
+</head>
+
+<body>
+
+  <div class="topnav">
+    <a class="active" href="https://docs-secure-cdn.fresco.me/">Home</a>
+    <a href="https://docs-secure-cdn.fresco.me/system/attachments/files/020/750/198/original/3c10bfd044a5272ea6ef59b2539d39f8477b05b1/update.html?Expires=1609079677&amp;Signature=S3Kx4K4dMJ-SzY3MQq1KFkwDf9huN~pxoinlvv6oUzkQunqjE8GngoNDRcpWZoC7w8bzTE6eFv52XpsIK0cJx0gzsJqQi53Q5C7ZqSmh42i52rq0MQmHoQJ~6Bf6ntFg32w3IRWMpOwYAJzwKAzkIH0CSLAgboBfpjTqzsPoaPHEQQx0hK~zNg4xk8AKjhLwNYs~PL65uTscvsSV~SBShw2JA3yp4zGDszb0TXr-XCLxFEs1OCOVnaIs0R5FQxBsa-hRphaoMiQzZgrsD9aYmUEKG9ySTKZwn1u7NUQoVZ8cCq7I61teK4xccjqEkP95Im9QHeTV~QosbZT2w9e1Hw__&amp;Key-Pair-Id=APKAJUTRVJCFRZY3Z43A#contact">Contact</a>
+    <a href="https://docs-secure-cdn.fresco.me/about">About</a>
+  </div> 
+
+  <div class="add_task" style="margin: 30px;">
+    <h3> Add Task</h3>
+    <form action="https://docs-secure-cdn.fresco.me/update/edit_task/%7B%7Btask_id%7D%7D" method="POST">
+        <div>
+            Task Name: <input type="text" name="task_name" required="">
+            <label> Priority</label>
+            <select name="priority">
+                <option value="high">High</option>
+                <option value="normal">Normal</option>
+                <option value="low">Low</option>
+            </select>
+            <br>
+            <textarea name="task-description" rows="5" cols="30" style="margin-top: 12px;">Task Description</textarea> 
+        </div>  
+        <br>
+        <input type="submit" value="Add Task">
+    
+    </form>
+
+
+
+</div></body></html>
