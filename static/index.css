@@ -1,0 +1,34 @@
+body {
+    background-color: rgb(199, 243, 178);
+  }
+
+.topnav {
+    background-color: rgb(104, 160, 72);
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #141414;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color:  rgb(199, 243, 178);
+    color: rgb(12, 12, 11);
+  }
+/*  inline form for task description*/
+.button-container form,
+.button-container form div {
+    display: inline;
+}
+
+.button-container button {
+    display: inline;
+    vertical-align: middle; 
+}
